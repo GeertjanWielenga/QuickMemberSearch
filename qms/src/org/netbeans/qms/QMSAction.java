@@ -12,6 +12,7 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
 import org.openide.awt.ActionRegistration;
+import org.openide.filesystems.FileObject;
 import org.openide.util.NbBundle.Messages;
 import org.openide.windows.Mode;
 import org.openide.windows.TopComponent;
@@ -33,9 +34,9 @@ import org.openide.windows.WindowManager;
 @Messages("CTL_QMSAction=Navigator")
 public final class QMSAction implements ActionListener {
 
-    private final DataObject context;
+    private final FileObject context;
 
-    public QMSAction(DataObject context) {
+    public QMSAction(FileObject context) {
         this.context = context;
     }
 

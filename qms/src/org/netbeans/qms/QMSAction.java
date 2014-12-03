@@ -22,14 +22,15 @@ import org.openide.windows.WindowManager;
         id = "org.netbeans.qms.QMSAction"
 )
 @ActionRegistration(
-        displayName = "#CTL_QMSAction"
+        displayName = "#CTL_QMSAction",
+        iconBase = "org/netbeans/qms/navigator.png"
 )
 @ActionReferences({
+    @ActionReference(path = "Menu/Window", position = 600),
     @ActionReference(path = "Editors/text/x-java/Popup", position = 400, separatorAfter = 450),
-    @ActionReference(path = "Shortcuts", name = "O-Q"),
-    @ActionReference(path = "Shortcuts", name = "D-7")}
+    @ActionReference(path = "Shortcuts", name = "O-Q")}
 )
-@Messages("CTL_QMSAction=Quick Member Search")
+@Messages("CTL_QMSAction=Navigator")
 public final class QMSAction implements ActionListener {
 
     private final DataObject context;
@@ -49,7 +50,7 @@ public final class QMSAction implements ActionListener {
         JFrame root = (JFrame) SwingUtilities.getRoot(tc);
         root.setExtendedState(root.getExtendedState() | Frame.MAXIMIZED_BOTH);
         root.setPreferredSize(new Dimension(262, 355));
-        root.setLocation(810,231);
+        root.setLocation(810, 231);
         root.pack();
         root.setAlwaysOnTop(true);
         UIManager.put("EditorTabDisplayerUI", oldTabDisplayer);

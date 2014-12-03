@@ -44,7 +44,11 @@ public final class QMSAction implements ActionListener {
         Mode floater = WindowManager.getDefault().findMode("undockedNavigator");
         Object oldTabDisplayer = UIManager.get("EditorTabDisplayerUI");
         UIManager.put("EditorTabDisplayerUI", "org.netbeans.qms.NoTabsTabDisplayerUI");
-        TopComponent tc = WindowManager.getDefault().findTopComponent("navigatorTC");
+        TopComponent navigator = WindowManager.getDefault().findTopComponent("navigatorTC");
+        redock(floater, navigator, oldTabDisplayer);
+    }
+
+    private void redock(Mode floater, TopComponent tc, Object oldTabDisplayer) throws SecurityException {
         floater.dockInto(tc);
         tc.open();
         JFrame root = (JFrame) SwingUtilities.getRoot(tc);

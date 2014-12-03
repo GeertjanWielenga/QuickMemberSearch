@@ -26,7 +26,8 @@ import org.openide.windows.WindowManager;
 )
 @ActionReferences({
     @ActionReference(path = "Editors/text/x-java/Popup", position = 400, separatorAfter = 450),
-    @ActionReference(path = "Shortcuts", name = "O-Q")}
+    @ActionReference(path = "Shortcuts", name = "O-Q"),
+    @ActionReference(path = "Shortcuts", name = "D-7")}
 )
 @Messages("CTL_QMSAction=Quick Member Search")
 public final class QMSAction implements ActionListener {

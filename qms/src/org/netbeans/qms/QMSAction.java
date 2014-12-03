@@ -32,8 +32,8 @@ public final class QMSAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-        DialogDescriptor dd = new DialogDescriptor(new QMSPanel(context), "Quick Member Search");
-        DialogDisplayer.getDefault().createDialog(dd).setVisible(true);
+//        DialogDescriptor dd = new DialogDescriptor(new QMSPanel(context), "Quick Member Search");
+//        DialogDisplayer.getDefault().createDialog(dd).setVisible(true);
     }
 
 }

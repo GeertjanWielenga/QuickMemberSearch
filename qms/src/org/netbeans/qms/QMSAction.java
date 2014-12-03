@@ -1,21 +1,14 @@
 package org.netbeans.qms;
 
-import java.awt.Dimension;
-import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import org.openide.*;
 import org.openide.loaders.DataObject;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
 import org.openide.awt.ActionRegistration;
 import org.openide.util.NbBundle.Messages;
-import org.openide.windows.Mode;
-import org.openide.windows.TopComponent;
-import org.openide.windows.WindowManager;
 
 @ActionID(
         category = "Edit",
@@ -39,19 +32,8 @@ public final class QMSAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-        Mode floater = WindowManager.getDefault().findMode("undockedNavigator");
-        Object oldTabDisplayer = UIManager.get("EditorTabDisplayerUI");
-        UIManager.put("EditorTabDisplayerUI", "org.netbeans.qms.NoTabsTabDisplayerUI");
-        TopComponent tc = WindowManager.getDefault().findTopComponent("navigatorTC");
-        floater.dockInto(tc);
-        tc.open();
-        JFrame root = (JFrame) SwingUtilities.getRoot(tc);
-        root.setExtendedState(root.getExtendedState() | Frame.MAXIMIZED_BOTH);
-        root.setPreferredSize(new Dimension(262,355));
-        root.setLocation(810, 231);
-        root.pack();
-        root.setAlwaysOnTop(true);
-        UIManager.put("EditorTabDisplayerUI", oldTabDisplayer);
+        DialogDescriptor dd = new DialogDescriptor(new QMSPanel(context), "Quick Member Search");
+        DialogDisplayer.getDefault().createDialog(dd).setVisible(true);
     }
 
 }

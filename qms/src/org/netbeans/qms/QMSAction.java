@@ -50,6 +50,7 @@ public final class QMSAction implements ActionListener {
         root.setPreferredSize(new Dimension(262, 355));
         root.setLocation(810,231);
         root.pack();
+        root.setAlwaysOnTop(true);
         UIManager.put("EditorTabDisplayerUI", oldTabDisplayer);
     }
 

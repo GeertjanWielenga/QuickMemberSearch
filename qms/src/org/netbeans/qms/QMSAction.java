@@ -39,7 +39,7 @@ public final class QMSAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ev) {
-        Mode floater = WindowManager.getDefault().findMode("floater");
+        Mode floater = WindowManager.getDefault().findMode("undockedNavigator");
         Object oldTabDisplayer = UIManager.get("EditorTabDisplayerUI");
         UIManager.put("EditorTabDisplayerUI", "org.netbeans.qms.NoTabsTabDisplayerUI");
         TopComponent tc = WindowManager.getDefault().findTopComponent("navigatorTC");
